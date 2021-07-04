@@ -1,3 +1,6 @@
+--SOURCE:https://mode.com/sql-tutorial/sql-data-types/
+--using schemas from "Mode Public Warehouse"
+
 --joining info on players and schools
 --figure out which conference has the highest average weight.
 SELECT teams.conference AS conference,
