@@ -13,4 +13,4 @@
 ## [Covid Exploration](https://github.com/maxwellgriffith345/SQL_Projects/tree/main/CovidExploration)
 - Exploration of the [Coronavirus Data](https://ourworldindata.org/covid-deaths) from Our World in Database
 - Based on the [Portfolio Project](https://ourworldindata.org/covid-deaths) by Alex Freberg
-- Topics Covered: SELECT, GROUP BY, Aliasing, Type casting CAST()
+- Topics Covered: SELECT, GROUP BY, Aliasing, Type casting CAST(), Window Functions, LAG, DATEPART, Sub Queries, CTE/WITH, JOIN
