@@ -1,5 +1,5 @@
 
---Creating the database? 
+--Creating the database?
 
 
 
@@ -22,5 +22,5 @@
 --IF table_name DOES EXIST THE FIRST ROW WILL BE ASSUMED TO BE CONTENT
 
 --CHANGE 'MODE' TO box FROM READABILITY
-.mode box
+.mode column
 .headers on

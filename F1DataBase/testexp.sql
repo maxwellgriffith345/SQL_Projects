@@ -1,10 +1,7 @@
--- SQLite
-select * from table1
+--SELECT * FROM Races limit 10
 
-select * from table1
-where PTS IS '25'
+SELECT DriverFirst, DriverLast, SUM(PTS) AS "Total Points"
+     FROM Races
+    WHERE RaceDate > '2021' GROUP BY   DriverLast 
+    ORDER BY 3 DESC 
 
-select Driver, SUM(PTS) as 'Total Points'
-From table1 
-Group by Driver 
-Order by 2 DESC
