@@ -51,3 +51,48 @@ From (
     GROUP BY 1
     Order BY 3 DESC
 --Problems: is only counting races where a DNF happened. Does not count races w/o a DNF as part of "RaceCount"
+
+--Approach 2: Using nested CTEs
+WITH DNF AS (
+    SELECT Circuit, COUNT(Retired) as "TotalDNF"
+    FROM Races
+    WHERE Retired = "DNF"
+    GROUP BY Circuit
+),
+
+TotalRaces AS (
+
+    SELECT Circuit, COUNT(DISTINCT RaceDate) AS "RaceCount"
+    FROM Races
+    GROUP BY Circuit
+)
+Select tr.Circuit, DNF.TotalDNF, tr.RaceCount
+FROM TotalRaces tr
+JOIN DNF
+ON tr.Circuit = DNF.Circuit
+Order BY 2 DESC
+-- Get's the accurate RaceCount and DNF Count
+
+--Add in the DNF/RaceCount column
+
+WITH DNF AS (
+    SELECT Circuit, COUNT(Retired) as "TotalDNF"
+    FROM Races
+    WHERE Retired = "DNF"
+    GROUP BY Circuit
+),
+
+TotalRaces AS (
+
+    SELECT Circuit, COUNT(DISTINCT RaceDate) AS "RaceCount"
+    FROM Races
+    GROUP BY Circuit
+)
+Select tr.Circuit, DNF.TotalDNF, tr.RaceCount,
+    ROUND((CAST(DNF.TotalDNF as REAL)/CAST(tr.RaceCount as REAL)),2) as DNFRatio
+FROM TotalRaces tr
+JOIN DNF
+ON tr.Circuit = DNF.Circuit
+Order BY 2 DESC
+
+--Using Views?
