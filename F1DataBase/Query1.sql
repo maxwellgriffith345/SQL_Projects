@@ -1,7 +1,7 @@
 
 
 -- See all of Verstappen's 2021 Race Results
---Select * From Races Where DriverLast = "Verstappen" AND RaceDate > "2021"
+Select * From Races Where DriverLast = "Verstappen" AND RaceDate > "2021"
 
 --Which driver had the most points in 2021? Who won the WDC
 
@@ -30,14 +30,14 @@ Select Circuit, Count(DISTINCT RaceDate) AS Count
     Where RaceDate > 2021
     GROUP BY Circuit
 
---Find Total number of races per circuit
+--Find Total number of races per circuit all years
 Select Circuit, Count(DISTINCT RaceDate) AS Count
     From Races
     GROUP BY Circuit
     ORDER BY 2 DESC
 
---What race has the most DNF % (#DNF at circuit/#Races at circuit)?
---Subquiries and CTE (WITH), Views
+--What circuit has the most DNF % (#DNF at circuit/#Races at circuit)?
+--Subquiries and CTE (WITH)
 
 --Approach 1 Subquiries
 Select sub.Circuit, sub.DNFCount, sub.RaceCount,
@@ -81,7 +81,6 @@ WITH DNF AS (
     WHERE Retired = "DNF"
     GROUP BY Circuit
 ),
-
 TotalRaces AS (
 
     SELECT Circuit, COUNT(DISTINCT RaceDate) AS "RaceCount"
