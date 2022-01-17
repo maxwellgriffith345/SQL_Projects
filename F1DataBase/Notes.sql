@@ -1,11 +1,6 @@
 
 --Creating the database?
 
-
-
-
-
-
 --IMPORTING A CSV FILE
 --https://www.sqlite.org/cli.html
 

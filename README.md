@@ -14,3 +14,8 @@
 - Exploration of the [Coronavirus Data](https://ourworldindata.org/covid-deaths) from Our World in Database
 - Based on the [Portfolio Project](https://ourworldindata.org/covid-deaths) by Alex Freberg
 - Topics Covered: SELECT, GROUP BY, Aliasing, Type casting CAST(), Window Functions, LAG, DATEPART, Sub Queries, CTE/WITH, JOIN
+
+## [F1 DataBase](https://github.com/maxwellgriffith345/SQL_Projects/tree/main/F1DataBase)
+- Exploration of the Formula 1 race results from 1950-2021
+- Data was sourced using my project [F1 Web Scraper](https://github.com/maxwellgriffith345/Python_Projects/tree/main/F1_Scraper)
+- Data was cleaned in excel before loading it into database
